@@ -6,9 +6,7 @@ import { getBugs, addBug, removeBug, resolveBug } from './api'; // ✅ added res
 function App() {
   const [bugs, setBugs] = useState([]);
 
-  useEffect(() => {
-    getBugs().then(res => setBugs(res.data));
-  }, []);
+  
 
   const handleAdd = (bug) => {
     addBug(bug).then(() => getBugs().then(res => setBugs(res.data)));
